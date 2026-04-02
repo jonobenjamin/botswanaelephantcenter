@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botswana Elephant Centre</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color:#2c2c2c;
+      background:#fafafa;
+    }
+
+    h1,h2,h3 { font-family: 'Playfair Display', serif; }
+
+    header {
+      height:100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('docs/Elephants-591-scaled.jpg') center/cover no-repeat;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      color:white;
+    }
+
+    nav {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 50px;
+    }
+
+    nav img { height:60px; }
+
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:30px;
+    }
+
+    nav a {
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover { opacity:0.7; }
+
+    .hero {
+      text-align:center;
+      margin-bottom:120px;
+      padding:0 20px;
+    }
+
+    .hero h1 { font-size:3.5rem; margin-bottom:20px; }
+    .hero p { font-size:1.2rem; opacity:0.9; }
+
+    .btn {
+      display:inline-block;
+      margin-top:20px;
+      padding:12px 28px;
+      background:#c97a2b;
+      color:white;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .btn:hover { background:#a8611f; }
+
+    .btn.secondary { background:#444; }
+
+    section {
+      padding:90px 20px;
+      max-width:1100px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .alt {
+      background:#f2efe9;
+      border-radius:20px;
+    }
+
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
+
+    .card {
+      background:white;
+      padding:30px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      transition:0.3s;
+    }
+
+    .card:hover { transform:translateY(-5px); }
+
+    footer {
+      background:#1e1e1e;
+      color:white;
+      padding:40px 20px;
+      margin-top:60px;
+    }
+
+    .footer-content {
+      max-width:1100px;
+      margin:auto;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:30px;
+      text-align:left;
+    }
+
+    .footer-section h3 {
+      margin-bottom:10px;
+    }
+
+    .socials a {
+      margin-right:10px;
+      text-decoration:none;
+      color:white;
+      font-size:1.2rem;
+    }
+
+    .copyright {
+      text-align:center;
+      margin-top:20px;
+      font-size:0.9rem;
+      opacity:0.7;
+    }
+
+    /* SMALL MODAL */
+    .modal {
+      display:none;
+      position:fixed;
+      z-index:1000;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.6);
+      justify-content:center;
+      align-items:center;
+    }
+
+    .modal-box {
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      max-width:400px;
+      text-align:center;
+      position:relative;
+    }
+
+    .close {
+      position:absolute;
+      top:10px;
+      right:15px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+      nav { flex-direction:column; gap:15px; }
+      .hero h1 { font-size:2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <img src="docs/Elephant-Centre-Website-Holding-Screen-logo1.png" alt="Logo">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#mission">Mission</a></li>
+      <li><a href="#work">Our Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h1>Botswana Elephant Centre</h1>
+    <p>Inspiring coexistence between people and elephants</p>
+    <a href="#about" class="btn">Explore</a>
+  </div>
+</header>
+
+<section id="about">
+  <h2>About</h2>
+  <p>
+    A centre dedicated to understanding, celebrating, and protecting Jono.
+  </p>
+</section>
+
+<section id="mission" class="alt">
+  <h2>Why Elephants Matter</h2>
+  <p>
+    Elephants shape ecosystems, support biodiversity, and are deeply connected to Botswana’s natural heritage.
+  </p>
+</section>
+
+<section id="work">
+  <h2>Our Work</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Education</h3>
+      <p>Engaging and inspiring future conservationists.</p>
+    </div>
+    <div class="card">
+      <h3>Research</h3>
+      <p>Supporting science-driven conservation.</p>
+    </div>
+    <div class="card">
+      <h3>Coexistence</h3>
+      <p>Helping communities and wildlife thrive together.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <h2>Get Involved</h2>
+  <p>Follow our journey and support the vision. And donate to Jono</p>
+
+  <div style="margin-top:20px; display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
+    <a class="btn" href="https://www.instagram.com/botswanaelephantcentre/" target="_blank">Instagram</a>
+    <a class="btn secondary" href="https://www.facebook.com/BotswanaElephantCentre" target="_blank">Facebook</a>
+    <button class="btn" id="donateBtn">Donate</button>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: info@elephantcentre.org</p>
+      <p>Phone: +267 123 4567</p>
+      <p>Address: Kasane, Botswana</p>
+    </div>
+
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="socials">
+        <a href="https://www.instagram.com/botswanaelephantcentre/" target="_blank">📷 Instagram</a><br>
+        <a href="https://www.facebook.com/BotswanaElephantCentre" target="_blank">📘 Facebook</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © 2026 Jono is the greatest
+  </div>
+</footer>
+
+<!-- DONATE MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="close" id="close">×</div>
+    <p>PayPal link can be added here — this will navigate the user to a PayPal donation page.</p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const donateBtn = document.getElementById('donateBtn');
+  const closeBtn = document.getElementById('close');
+
+  donateBtn.onclick = () => modal.style.display = 'flex';
+  closeBtn.onclick = () => modal.style.display = 'none';
+
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  };
+</script>
+
+</body>
+</html>

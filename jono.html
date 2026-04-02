@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Botswana Elephant Centre</title>
 
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="docs/Elephant-Centre-Website-Holding-Screen-logo1.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -71,6 +74,7 @@
       font-weight:600;
       transition:0.3s;
       cursor:pointer;
+      border:none;
     }
 
     .btn:hover { background:#a8611f; }
@@ -114,13 +118,18 @@
     .footer-content {
       max-width:1100px;
       margin:auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
       gap:30px;
-      text-align:left;
+      flex-wrap:wrap;
     }
 
-    .footer-section h3 { margin-bottom:10px; }
+    .footer-left {
+      max-width:500px;
+    }
+
+    .footer-left h3 { margin-bottom:10px; }
 
     .social-icons {
       display:flex;
@@ -139,14 +148,18 @@
       transition:0.3s;
     }
 
-    .social-icons a:hover {
-      background:#c97a2b;
-    }
+    .social-icons a:hover { background:#c97a2b; }
 
     .social-icons svg {
       width:20px;
       height:20px;
       fill:white;
+    }
+
+    .footer-right {
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .copyright {
@@ -190,6 +203,7 @@
     @media(max-width:768px){
       nav { flex-direction:column; gap:15px; }
       .hero h1 { font-size:2.5rem; }
+      .footer-content { flex-direction:column; align-items:flex-start; }
     }
   </style>
 </head>
@@ -247,22 +261,24 @@
 <footer>
   <div class="footer-content">
 
-    <div class="footer-section">
+    <div class="footer-left">
       <h3>Contact</h3>
       <p>Email: info@elephantcentre.org</p>
       <p>Phone: +267 123 4567</p>
       <p>Address: Kasane, Botswana</p>
 
       <div class="social-icons">
-        <a href="https://www.instagram.com/botswanaelephantcentre/" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/botswanaelephantcentre/" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm6-1.8a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 18 5.7zM12 9a3 3 0 1 0 3 3 3 3 0 0 0-3-3z"/></svg>
         </a>
-
-        <a href="https://www.facebook.com/BotswanaElephantCentre" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/BotswanaElephantCentre" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9v-3h2.6V9.4c0-2.6 1.5-4 3.9-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.8l-.4 3h-2.4v7A10 10 0 0 0 22 12z"/></svg>
         </a>
       </div>
+    </div>
 
+    <div class="footer-right">
+      <button class="btn" id="donateBtn">Donate</button>
     </div>
 
   </div>
@@ -271,6 +287,27 @@
     © 2026 Jono is the greatest
   </div>
 </footer>
+
+<!-- DONATE MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="close" id="close">×</div>
+    <p>PayPal link can be added here — this will navigate the user to a PayPal donation page.</p>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById('modal');
+  const donateBtn = document.getElementById('donateBtn');
+  const closeBtn = document.getElementById('close');
+
+  donateBtn.onclick = () => modal.style.display = 'flex';
+  closeBtn.onclick = () => modal.style.display = 'none';
+
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = 'none';
+  };
+</script>
 
 </body>
 </html>
